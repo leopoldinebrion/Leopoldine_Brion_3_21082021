@@ -1,0 +1,22 @@
+body {
+  font-family: "Roboto";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 20px 0;
+}
+
+location {
+  background-color: $dark-grey;
+  text-align: center;
+}
+
+.restaurant__img {
+  overflow: hidden;
+  object-fit: cover;
+}
