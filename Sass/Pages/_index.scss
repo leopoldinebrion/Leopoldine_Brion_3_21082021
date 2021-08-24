@@ -1,19 +1,31 @@
-body {
-  font-family: "Roboto";
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.location {
+  width: 100%;
+  @include center-row;
+  background-color: darken($grey, 10%);
+  color: darken($grey, 70%);
+  padding-top: $small-spacing;
+  padding-bottom: $small-spacing;
+  &__input {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    text-align: center;
+    font: bold;
+  }
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0 20px 0;
+.location > i {
+  margin-right: 10px;
 }
 
-location {
-  background-color: $dark-grey;
-  text-align: center;
+.explorer {
+  background-color: $grey;
+  @include center-column;
+  padding-top: $small-spacing;
+  padding-bottom: $small-spacing;
+  &__title {
+    font-weight: bold;
+  }
 }
 
 .restaurant__img {

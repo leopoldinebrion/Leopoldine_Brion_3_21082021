@@ -1,0 +1,8 @@
+header {
+  @include center-row;
+  padding-top: $small-spacing;
+  @include shadow;
+  background-color: white;
+  top: 0;
+  position: sticky;
+}

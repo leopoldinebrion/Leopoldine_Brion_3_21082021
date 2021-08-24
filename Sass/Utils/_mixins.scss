@@ -1,0 +1,16 @@
+@mixin center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin shadow {
+  box-shadow: 0px 6px 9px -1px rgba(0, 0, 0, 0.267);
+}
