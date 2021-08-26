@@ -6,4 +6,7 @@
   color: white;
   border: none;
   @include shadow;
+  &:hover {
+    @include btn-effect;
+  }
 }

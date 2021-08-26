@@ -1,0 +1,33 @@
+footer {
+  background-color: darken($grey, 80%);
+  color: white;
+  padding: $small-spacing;
+}
+
+.footer__title {
+  font-family: "Shrikhand";
+  font-weight: normal;
+  color: white;
+}
+
+.footer__list {
+  list-style: none;
+  padding-left: 0;
+  .footer__list__icon {
+    @include flex(row, flex-start, center) display: flex;
+  }
+}
+
+.footer__list i {
+  margin-right: 25px;
+  width: 1px;
+}
+
+.footer__list a {
+  color: white;
+  font-weight: lighter;
+}
+
+.footer__list li {
+  margin-bottom: 8px;
+}
