@@ -14,7 +14,7 @@ footer {
   list-style: none;
   padding-left: 0;
   .footer__list__icon {
-    @include flex(row, flex-start, center) display: flex;
+    @include flex(row, flex-start, center);
   }
 }
 
