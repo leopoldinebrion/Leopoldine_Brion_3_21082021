@@ -16,6 +16,7 @@
 .btn__like {
   position: relative;
   font-size: 25px;
+  width: 10%;
   &__heart {
     position: absolute;
     bottom: 20px;
@@ -30,9 +31,23 @@
   -webkit-text-fill-color: transparent;
 }
 
-.heart-empty {
+#test {
+  visibility: hidden;
+  display: none;
+}
+
+#test:checked ~ label .heart-empty {
+  opacity: 0;
   transition-duration: 600ms;
-  &:hover {
-    opacity: 0%;
-  }
+}
+
+.heart-empty {
+  opacity: 1;
+  transition-duration: 600ms;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
