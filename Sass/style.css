@@ -4,6 +4,7 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  max-width: 1950px;
 }
 
 a {
@@ -217,6 +218,7 @@ input::placeholder {
 
 .restaurant__container {
   margin-top: 20px;
+  position: relative;
 }
 
 @media screen and (min-width: 770px) {
@@ -259,6 +261,7 @@ input::placeholder {
 
 .card__new {
   position: absolute;
+  text-align: center;
   top: 10px;
   right: 10px;
   background-color: #99e2d0;
@@ -266,24 +269,6 @@ input::placeholder {
   color: #278870;
   font-weight: bold;
   padding: 5px;
-}
-
-.btn__like {
-  position: relative;
-  font-size: 25px;
-}
-
-.btn__like__hearth {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-}
-
-.full-like {
-  background: -webkit-linear-gradient(#ff79da, #9356dc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0;
 }
 
 .explorer__btn {
@@ -302,6 +287,34 @@ input::placeholder {
   -webkit-box-shadow: 7px 6px 9px -1px #6e6e6e;
           box-shadow: 7px 6px 9px -1px #6e6e6e;
   opacity: 0.8;
+}
+
+/** remplissage coeur **/
+.btn__like {
+  position: relative;
+  font-size: 25px;
+}
+
+.btn__like__heart {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+}
+
+.heart-full {
+  background: -webkit-linear-gradient(#ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heart-empty {
+  -webkit-transition-duration: 600ms;
+          transition-duration: 600ms;
+}
+
+.heart-empty:hover {
+  opacity: 0%;
 }
 
 footer {
@@ -351,102 +364,49 @@ footer {
   margin-bottom: 8px;
 }
 
-@-webkit-keyframes loading-disparition {
-  0% {
-    -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-  }
-  11% {
-    -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
-  }
-  25% {
-    -webkit-backdrop-filter: blur(6px);
-            backdrop-filter: blur(6px);
-  }
-  50% {
-    -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-  }
-  65% {
-    -webkit-backdrop-filter: blur(4px);
-            backdrop-filter: blur(4px);
-  }
-  80% {
-    -webkit-backdrop-filter: blur(3px);
-            backdrop-filter: blur(3px);
-  }
-  95% {
-    -webkit-backdrop-filter: blur(2px);
-            backdrop-filter: blur(2px);
-  }
-  99% {
-    -webkit-backdrop-filter: blur(1px);
-            backdrop-filter: blur(1px);
-  }
-}
-
+/**
 @keyframes loading-disparition {
   0% {
-    -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
   }
   11% {
-    -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
   }
   25% {
-    -webkit-backdrop-filter: blur(6px);
-            backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
   }
   50% {
-    -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
   }
   65% {
-    -webkit-backdrop-filter: blur(4px);
-            backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
   }
   80% {
-    -webkit-backdrop-filter: blur(3px);
-            backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
   }
   95% {
-    -webkit-backdrop-filter: blur(2px);
-            backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
   }
   99% {
-    -webkit-backdrop-filter: blur(1px);
-            backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
   }
 }
 
 .loading {
-  position: fixed;
+  backdrop-filter: blur(5px);
   width: 100%;
-  height: 100%;
-  -webkit-animation: loading-disparition 3s forwards;
-          animation: loading-disparition 3s forwards;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 100vh;
+  position: fixed;
+  animation: loading-disparition 3s forwards;
+  @include flex(row, center, center);
+  &__item {
+    background: -webkit-linear-gradient($pink, $purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+    margin: 0px 5px;
+  }
 }
 
-.loading__item {
-  background: -webkit-linear-gradient(#ff79da, #9356dc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 25px;
-  margin: 0px 5px;
-}
+**/
 /*# sourceMappingURL=style.css.map */

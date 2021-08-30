@@ -86,6 +86,7 @@ input::placeholder {
   padding: $medium-spacing $small-spacing;
   &__container {
     margin-top: $small-spacing;
+    position: relative;
   }
 }
 
@@ -120,6 +121,7 @@ input::placeholder {
 
 .card__new {
   position: absolute;
+  text-align: center;
   top: 10px;
   right: 10px;
   background-color: $mint;
@@ -127,24 +129,4 @@ input::placeholder {
   color: darken($mint, 40%);
   font-weight: bold;
   padding: 5px;
-}
-
-.btn__like {
-  position: relative;
-  font-size: 25px;
-  &__hearth {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-  }
-}
-
-.full-like {
-  background: -webkit-linear-gradient($pink, $purple);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0;
-}
-
-.empty-like {
 }

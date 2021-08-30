@@ -10,3 +10,29 @@
     @include btn-effect;
   }
 }
+
+/** remplissage coeur **/
+
+.btn__like {
+  position: relative;
+  font-size: 25px;
+  &__heart {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+  }
+}
+
+.heart-full {
+  background: -webkit-linear-gradient($pink, $purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heart-empty {
+  transition-duration: 600ms;
+  &:hover {
+    opacity: 0%;
+  }
+}
