@@ -25,6 +25,7 @@ p {
 }
 
 header {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,6 +44,13 @@ header {
           box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
   background-color: white;
   top: 0;
+}
+
+header i {
+  position: absolute;
+  left: 20px;
+  top: 4%;
+  font-size: large;
 }
 
 .location {
@@ -246,7 +254,7 @@ input::placeholder {
   position: relative;
 }
 
-.restaurant__card__caption {
+.text {
   padding: 10px;
   line-height: 25px;
 }
@@ -309,24 +317,28 @@ input::placeholder {
   -webkit-text-fill-color: transparent;
 }
 
-#test {
+.btn__like input {
   visibility: hidden;
   display: none;
 }
 
-#test:checked ~ label .heart-empty {
+input:checked ~ label .heart-empty {
   opacity: 0;
-  -webkit-transition-duration: 600ms;
-          transition-duration: 600ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
 
 .heart-empty {
   opacity: 1;
-  -webkit-transition-duration: 600ms;
-          transition-duration: 600ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
 
-.row {
+.heart-empty:hover {
+  opacity: 0;
+}
+
+.restaurant__card__caption {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,6 +346,10 @@ input::placeholder {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+}
+
+.menu .btn__like__heart {
+  background-color: #f4f4f4;
 }
 
 footer {
@@ -413,4 +429,83 @@ footer {
 }
 
 **/
+.banner img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.menu {
+  position: relative;
+  top: -30px;
+  background-color: #f4f4f4;
+  border-radius: 30px 30px 0px 0px;
+  padding: 40px 20px 20px 20px;
+}
+
+.restaurant__name {
+  font-family: "Shrikhand";
+}
+
+.menu__description {
+  margin-top: 40px;
+}
+
+.menu__description__card {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  -webkit-box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
+          box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
+  cursor: pointer;
+}
+
+.title h2 {
+  font-weight: lighter;
+  font-size: 1.1em;
+  border-bottom: 3px solid #99e2d0;
+  width: 40px;
+}
+
+.price {
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  line-height: 25px;
+}
+
+.description h3 {
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.description p {
+  font-weight: 300;
+  font-size: 0.9em;
+}
 /*# sourceMappingURL=style.css.map */

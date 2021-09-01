@@ -31,23 +31,30 @@
   -webkit-text-fill-color: transparent;
 }
 
-#test {
+.btn__like input {
   visibility: hidden;
   display: none;
 }
 
-#test:checked ~ label .heart-empty {
+input:checked ~ label .heart-empty {
   opacity: 0;
-  transition-duration: 600ms;
+  transition-duration: 500ms;
 }
 
 .heart-empty {
   opacity: 1;
-  transition-duration: 600ms;
+  transition-duration: 500ms;
+  &:hover {
+    opacity: 0;
+  }
 }
 
-.row {
+.restaurant__card__caption {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.menu .btn__like__heart {
+  background-color: $grey;
 }

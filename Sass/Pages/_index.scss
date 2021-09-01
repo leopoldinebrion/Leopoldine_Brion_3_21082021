@@ -107,11 +107,13 @@ input::placeholder {
   margin-bottom: $small-spacing;
   @include shadow;
   position: relative;
-  &__caption {
-    padding: 10px;
-    line-height: 25px;
-  }
 }
+
+.text {
+  padding: 10px;
+  line-height: 25px;
+}
+
 .restaurant__img {
   object-fit: cover;
   border-radius: 15px 15px 0px 0px;
