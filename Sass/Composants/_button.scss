@@ -1,4 +1,5 @@
-.explorer__btn {
+.gradient_button {
+  font-weight: 600;
   border-radius: 2rem;
   padding: 12px 20px 12px 20px;
   cursor: pointer;
@@ -57,4 +58,21 @@ input:checked ~ label .heart-empty {
 
 .menu .btn__like__heart {
   background-color: $grey;
+}
+
+/** Bouton commander **/
+
+.order_button {
+  font-weight: 600;
+  border-radius: 2rem;
+  padding: 12px 40px 12px 40px;
+  cursor: pointer;
+  background: linear-gradient($pink, $purple);
+  color: white;
+  border: none;
+  font-size: 0.9em;
+  @include shadow;
+  &:hover {
+    @include btn-effect;
+  }
 }

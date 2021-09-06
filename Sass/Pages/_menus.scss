@@ -3,7 +3,7 @@
   object-fit: cover;
 }
 
-.menu {
+.restaurant {
   position: relative;
   top: -30px;
   background-color: $grey;
@@ -15,6 +15,13 @@
   font-family: "Shrikhand";
 }
 
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
 .menu__description {
   margin-top: $medium-spacing;
   &__card {
@@ -22,7 +29,6 @@
     @include flex(row, space-between, center);
     background-color: white;
     border-radius: 15px;
-    padding: 15px;
     @include shadow;
     cursor: pointer;
   }
@@ -38,12 +44,16 @@
 .price {
   font-weight: bold;
   padding-top: 20px;
+  padding-right: 1rem;
 }
 
 .description {
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   line-height: 25px;
 }
 
@@ -56,3 +66,65 @@
   font-weight: 300;
   font-size: 0.9em;
 }
+
+.order {
+  margin-top: $medium-spacing;
+  display: flex;
+  justify-content: center;
+}
+
+/** ANIMATIONS **/
+
+.checkbox {
+  background-color: $mint;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 0;
+}
+
+.circle-check {
+  font-size: 30px;
+  color: white;
+  background-color: $mint;
+}
+
+.menu__description__card:hover .price {
+  margin-right: 4rem;
+  transition: margin-right 600ms;
+}
+
+.menu__description__card:hover .checkbox {
+  margin-right: 4rem;
+  transition: margin-right 600ms;
+}
+
+.menu__description__card:hover .circle-check {
+  animation: circle_rotation 500ms;
+}
+
+.appearance1 {
+  animation: card-appearance 500ms backwards;
+  animation-delay: 500ms;
+}
+
+.appearance2 {
+  animation: card-appearance 500ms backwards;
+  animation-delay: 800ms;
+}
+
+.appearance3 {
+  animation: card-appearance 500ms backwards;
+  animation-delay: 1000ms;
+}
+/**
+
+
+.checkbox input {
+  visibility: hidden;
+  display: none;
+}
+
+input:checked ~ label .circle {
+  background-color: $mint;
+}
+
+**/

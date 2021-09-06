@@ -279,7 +279,8 @@ input::placeholder {
   padding: 5px;
 }
 
-.explorer__btn {
+.gradient_button {
+  font-weight: 600;
   border-radius: 2rem;
   padding: 12px 20px 12px 20px;
   cursor: pointer;
@@ -291,7 +292,7 @@ input::placeholder {
           box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
 }
 
-.explorer__btn:hover {
+.gradient_button:hover {
   -webkit-box-shadow: 7px 6px 9px -1px #6e6e6e;
           box-shadow: 7px 6px 9px -1px #6e6e6e;
   opacity: 0.8;
@@ -350,6 +351,27 @@ input:checked ~ label .heart-empty {
 
 .menu .btn__like__heart {
   background-color: #f4f4f4;
+}
+
+/** Bouton commander **/
+.order_button {
+  font-weight: 600;
+  border-radius: 2rem;
+  padding: 12px 40px 12px 40px;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background: linear-gradient(#ff79da, #9356dc);
+  color: white;
+  border: none;
+  font-size: 0.9em;
+  -webkit-box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
+          box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
+}
+
+.order_button:hover {
+  -webkit-box-shadow: 7px 6px 9px -1px #6e6e6e;
+          box-shadow: 7px 6px 9px -1px #6e6e6e;
+  opacity: 0.8;
 }
 
 footer {
@@ -429,13 +451,60 @@ footer {
 }
 
 **/
+@-webkit-keyframes circle_rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes circle_rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes card-appearance {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes card-appearance {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .banner img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.menu {
+.restaurant {
   position: relative;
   top: -30px;
   background-color: #f4f4f4;
@@ -445,6 +514,16 @@ footer {
 
 .restaurant__name {
   font-family: "Shrikhand";
+}
+
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 
 .menu__description {
@@ -468,7 +547,6 @@ footer {
           align-items: center;
   background-color: white;
   border-radius: 15px;
-  padding: 15px;
   -webkit-box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
           box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
   cursor: pointer;
@@ -484,9 +562,11 @@ footer {
 .price {
   font-weight: bold;
   padding-top: 20px;
+  padding-right: 1rem;
 }
 
 .description {
+  padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -494,8 +574,9 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   line-height: 25px;
 }
 
@@ -508,4 +589,79 @@ footer {
   font-weight: 300;
   font-size: 0.9em;
 }
+
+.order {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/** ANIMATIONS **/
+.checkbox {
+  background-color: #99e2d0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 0;
+}
+
+.circle-check {
+  font-size: 30px;
+  color: white;
+  background-color: #99e2d0;
+}
+
+.menu__description__card:hover .price {
+  margin-right: 4rem;
+  -webkit-transition: margin-right 600ms;
+  transition: margin-right 600ms;
+}
+
+.menu__description__card:hover .checkbox {
+  margin-right: 4rem;
+  -webkit-transition: margin-right 600ms;
+  transition: margin-right 600ms;
+}
+
+.menu__description__card:hover .circle-check {
+  -webkit-animation: circle_rotation 500ms;
+          animation: circle_rotation 500ms;
+}
+
+.appearance1 {
+  -webkit-animation: card-appearance 500ms backwards;
+          animation: card-appearance 500ms backwards;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.appearance2 {
+  -webkit-animation: card-appearance 500ms backwards;
+          animation: card-appearance 500ms backwards;
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+
+.appearance3 {
+  -webkit-animation: card-appearance 500ms backwards;
+          animation: card-appearance 500ms backwards;
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
+/**
+
+
+.checkbox input {
+  visibility: hidden;
+  display: none;
+}
+
+input:checked ~ label .circle {
+  background-color: $mint;
+}
+
+**/
 /*# sourceMappingURL=style.css.map */
