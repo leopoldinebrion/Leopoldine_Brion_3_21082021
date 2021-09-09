@@ -9,16 +9,9 @@
   background-color: $grey;
   border-radius: 30px 30px 0px 0px;
   padding: $medium-spacing $small-spacing $small-spacing $small-spacing;
-}
 
-.restaurant__name {
-  font-family: "Shrikhand";
-}
-
-@media screen and (min-width: 1024px) {
-  .menu {
-    display: flex;
-    justify-content: space-around;
+  &__name {
+    font-family: "Shrikhand";
   }
 }
 
@@ -26,11 +19,23 @@
   margin-top: $medium-spacing;
   &__card {
     margin-top: $small-spacing;
-    @include flex(row, space-between, center);
     background-color: white;
     border-radius: 15px;
     @include shadow;
+    @include flex(row, space-between, center);
+    height: 80px;
+    overflow: hidden;
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: flex;
+    justify-content: space-around;
+  }
+  .menu__description__card {
+    width: 320px;
   }
 }
 
@@ -41,30 +46,35 @@
   width: 40px;
 }
 
+.description {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  &__left {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    line-height: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  & h3 {
+    font-size: 1.1em;
+    font-weight: 400;
+  }
+
+  & p {
+    font-weight: 300;
+    font-size: 0.9em;
+  }
+}
+
 .price {
   font-weight: bold;
-  padding-top: 20px;
-  padding-right: 1rem;
-}
-
-.description {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  line-height: 25px;
-}
-
-.description h3 {
-  font-size: 1.1em;
-  font-weight: 400;
-}
-
-.description p {
-  font-weight: 300;
-  font-size: 0.9em;
+  padding: 20px 10px 10px 0px;
+  align-self: flex-end;
 }
 
 .order {
@@ -73,31 +83,28 @@
   justify-content: center;
 }
 
-/** ANIMATIONS **/
+/** ANIMATIONS CHECKBOX **/
 
 .checkbox {
   background-color: $mint;
-  margin: -1rem -5rem -1rem 1rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   width: 0;
-}
 
-.circle-check {
-  font-size: 30px;
-  color: white;
-  background-color: $mint;
+  &__circle {
+    font-size: 20px;
+    color: white;
+    background-color: $mint;
+  }
 }
-
-.menu__description__card:hover .price {
-  margin-right: 4rem;
-  transition: margin-right 600ms;
-}
-
 .menu__description__card:hover .checkbox {
-  margin-right: 4rem;
-  transition: margin-right 600ms;
+  animation: check-appearance 800ms both;
 }
 
-.menu__description__card:hover .circle-check {
+.menu__description__card:hover .checkbox__circle {
   animation: circle_rotation 500ms;
 }
 
@@ -115,16 +122,15 @@
   animation: card-appearance 500ms backwards;
   animation-delay: 1000ms;
 }
+
 /**
 
-
-.checkbox input {
+#checkbox__input {
   visibility: hidden;
   display: none;
 }
 
-input:checked ~ label .circle {
-  background-color: $mint;
+input:checked ~ label #checkbox__input {
+  animation: check-appearance;
 }
-
 **/

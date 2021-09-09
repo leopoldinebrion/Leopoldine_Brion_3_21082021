@@ -279,7 +279,7 @@ input::placeholder {
   padding: 5px;
 }
 
-.gradient_button {
+.gradient__button {
   font-weight: 600;
   border-radius: 2rem;
   padding: 12px 20px 12px 20px;
@@ -292,7 +292,7 @@ input::placeholder {
           box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
 }
 
-.gradient_button:hover {
+.gradient__button:hover {
   -webkit-box-shadow: 7px 6px 9px -1px #6e6e6e;
           box-shadow: 7px 6px 9px -1px #6e6e6e;
   opacity: 0.8;
@@ -354,7 +354,7 @@ input:checked ~ label .heart-empty {
 }
 
 /** Bouton commander **/
-.order_button {
+.order__button {
   font-weight: 600;
   border-radius: 2rem;
   padding: 12px 40px 12px 40px;
@@ -368,7 +368,7 @@ input:checked ~ label .heart-empty {
           box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
 }
 
-.order_button:hover {
+.order__button:hover {
   -webkit-box-shadow: 7px 6px 9px -1px #6e6e6e;
           box-shadow: 7px 6px 9px -1px #6e6e6e;
   opacity: 0.8;
@@ -498,6 +498,24 @@ footer {
   }
 }
 
+@-webkit-keyframes check-appearance {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50px;
+  }
+}
+
+@keyframes check-appearance {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50px;
+  }
+}
+
 .banner img {
   width: 100%;
   -o-object-fit: cover;
@@ -516,22 +534,16 @@ footer {
   font-family: "Shrikhand";
 }
 
-@media screen and (min-width: 1024px) {
-  .menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-}
-
 .menu__description {
   margin-top: 40px;
 }
 
 .menu__description__card {
   margin-top: 20px;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
+          box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -545,11 +557,22 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
-  border-radius: 15px;
-  -webkit-box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
-          box-shadow: 7px 6px 9px -1px rgba(0, 0, 0, 0.267);
+  height: 80px;
+  overflow: hidden;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .menu__description__card {
+    width: 320px;
+  }
 }
 
 .title h2 {
@@ -559,13 +582,17 @@ footer {
   width: 40px;
 }
 
-.price {
-  font-weight: bold;
-  padding-top: 20px;
-  padding-right: 1rem;
+.description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
 
-.description {
+.description__left {
   padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -574,10 +601,10 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
   line-height: 25px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .description h3 {
@@ -590,6 +617,13 @@ footer {
   font-size: 0.9em;
 }
 
+.price {
+  font-weight: bold;
+  padding: 20px 10px 10px 0px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 .order {
   margin-top: 40px;
   display: -webkit-box;
@@ -600,32 +634,35 @@ footer {
           justify-content: center;
 }
 
-/** ANIMATIONS **/
+/** ANIMATIONS CHECKBOX **/
 .checkbox {
   background-color: #99e2d0;
-  margin: -1rem -5rem -1rem 1rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
   width: 0;
 }
 
-.circle-check {
-  font-size: 30px;
+.checkbox__circle {
+  font-size: 20px;
   color: white;
   background-color: #99e2d0;
 }
 
-.menu__description__card:hover .price {
-  margin-right: 4rem;
-  -webkit-transition: margin-right 600ms;
-  transition: margin-right 600ms;
-}
-
 .menu__description__card:hover .checkbox {
-  margin-right: 4rem;
-  -webkit-transition: margin-right 600ms;
-  transition: margin-right 600ms;
+  -webkit-animation: check-appearance 800ms both;
+          animation: check-appearance 800ms both;
 }
 
-.menu__description__card:hover .circle-check {
+.menu__description__card:hover .checkbox__circle {
   -webkit-animation: circle_rotation 500ms;
           animation: circle_rotation 500ms;
 }
@@ -653,15 +690,13 @@ footer {
 
 /**
 
-
-.checkbox input {
+#checkbox__input {
   visibility: hidden;
   display: none;
 }
 
-input:checked ~ label .circle {
-  background-color: $mint;
+input:checked ~ label #checkbox__input {
+  animation: check-appearance;
 }
-
 **/
 /*# sourceMappingURL=style.css.map */

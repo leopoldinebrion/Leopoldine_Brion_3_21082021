@@ -19,3 +19,13 @@
     transform: translateY(0);
   }
 }
+
+@keyframes check-appearance {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 50px;
+  }
+}
