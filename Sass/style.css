@@ -567,11 +567,12 @@ footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .menu__description__card {
-    width: 320px;
+    width: 30vw;
   }
 }
 
@@ -590,9 +591,13 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .description__left {
+  width: calc(100% - 90px);
   padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -602,26 +607,31 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column;
   line-height: 25px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .description h3 {
   font-size: 1.1em;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .description p {
   font-weight: 300;
   font-size: 0.9em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .price {
   font-weight: bold;
-  padding: 20px 10px 10px 0px;
+  margin: 0 10px 10px 0;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  width: 50px;
+  text-align: right;
 }
 
 .order {
@@ -636,19 +646,25 @@ footer {
 
 /** ANIMATIONS CHECKBOX **/
 .checkbox {
-  background-color: #99e2d0;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
-  width: 0;
+  background-color: #99e2d0;
+  margin: -16px -120px -16px 16px;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  width: 80px;
 }
 
 .checkbox__circle {
@@ -658,13 +674,14 @@ footer {
 }
 
 .menu__description__card:hover .checkbox {
-  -webkit-animation: check-appearance 800ms both;
-          animation: check-appearance 800ms both;
+  margin-right: -10px;
 }
 
 .menu__description__card:hover .checkbox__circle {
-  -webkit-animation: circle_rotation 500ms;
-          animation: circle_rotation 500ms;
+  -webkit-animation: circle_rotation 700ms;
+          animation: circle_rotation 700ms;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
 }
 
 .appearance1 {

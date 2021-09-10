@@ -32,10 +32,10 @@
 @media screen and (min-width: 1024px) {
   .menu {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .menu__description__card {
-    width: 320px;
+    width: 30vw;
   }
 }
 
@@ -50,31 +50,40 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   &__left {
+    width: calc(100% - 90px);
     padding: 15px;
     display: flex;
     flex-direction: column;
     line-height: 25px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 
   & h3 {
     font-size: 1.1em;
     font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   & p {
     font-weight: 300;
     font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 .price {
   font-weight: bold;
-  padding: 20px 10px 10px 0px;
+  margin: 0 10px 10px 0;
   align-self: flex-end;
+  width: 50px;
+  text-align: right;
 }
 
 .order {
@@ -86,14 +95,12 @@
 /** ANIMATIONS CHECKBOX **/
 
 .checkbox {
-  background-color: $mint;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  width: 0;
-
+  @include flex(row, center, center);
+  background-color: $mint;
+  margin: -16px -120px -16px 16px;
+  transition-duration: 0.5s;
+  width: 80px;
   &__circle {
     font-size: 20px;
     color: white;
@@ -101,11 +108,12 @@
   }
 }
 .menu__description__card:hover .checkbox {
-  animation: check-appearance 800ms both;
+  margin-right: -10px;
 }
 
 .menu__description__card:hover .checkbox__circle {
-  animation: circle_rotation 500ms;
+  animation: circle_rotation 700ms;
+  animation-delay: 200ms;
 }
 
 .appearance1 {
