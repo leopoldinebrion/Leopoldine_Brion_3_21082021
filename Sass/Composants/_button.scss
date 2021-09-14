@@ -39,7 +39,7 @@
 
 input:checked ~ label .heart-empty {
   opacity: 0;
-  transition-duration: 500ms;
+  transition-duration: 400ms;
 }
 
 .heart-empty {

@@ -3,12 +3,17 @@
   object-fit: cover;
 }
 
+@media screen and (min-width: 690px) {
+  .banner img {
+    max-height: 400px;
+  }
+}
+
 .restaurant {
   position: relative;
   top: -30px;
   background-color: $grey;
   border-radius: 30px 30px 0px 0px;
-  padding: $medium-spacing $small-spacing $small-spacing $small-spacing;
 
   &__name {
     font-family: "Shrikhand";
@@ -98,8 +103,8 @@
   height: 100%;
   @include flex(row, center, center);
   background-color: $mint;
-  margin: -16px -120px -16px 16px;
-  transition-duration: 0.5s;
+  margin: -15px -100px -15px 10px;
+  transition-duration: 800ms;
   width: 80px;
   &__circle {
     font-size: 20px;
@@ -107,14 +112,26 @@
     background-color: $mint;
   }
 }
+
 .menu__description__card:hover .checkbox {
-  margin-right: -10px;
+  margin-right: -1px;
 }
 
 .menu__description__card:hover .checkbox__circle {
   animation: circle_rotation 700ms;
   animation-delay: 200ms;
 }
+
+#menu__choice {
+  visibility: hidden;
+  display: none;
+}
+
+input:checked ~ label .checkbox {
+  margin-right: -1px;
+}
+
+/** ANIMATIONS APPARATITION DES CARD **/
 
 .appearance1 {
   animation: card-appearance 500ms backwards;
@@ -130,15 +147,3 @@
   animation: card-appearance 500ms backwards;
   animation-delay: 1000ms;
 }
-
-/**
-
-#checkbox__input {
-  visibility: hidden;
-  display: none;
-}
-
-input:checked ~ label #checkbox__input {
-  animation: check-appearance;
-}
-**/

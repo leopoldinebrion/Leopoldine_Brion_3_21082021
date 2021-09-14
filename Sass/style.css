@@ -325,8 +325,8 @@ input::placeholder {
 
 input:checked ~ label .heart-empty {
   opacity: 0;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
 }
 
 .heart-empty {
@@ -422,35 +422,207 @@ footer {
 }
 
 /**
-@keyframes loading-disparition {
-  0% {
-    backdrop-filter: blur(6px);
-  }
-  99% {
-    backdrop-filter: blur(0px);
-  }
-}
-
-
 .loading {
   z-index: 2;
-  backdrop-filter: blur(6px);
+  position: fixed;
   width: 100%;
   height: 100vh;
-  position: fixed;
-  animation: loading-disparition 3s forwards;
-  @include flex(row, center, center);
+  animation: loading-disparition 5s forwards;
+  &__container {
+    @include flex(row, center, center);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
   &__item {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    background: blue;
+    background: $purple;
     font-size: 25px;
     margin-left: 5px;
   }
 }
 
+.loading__container div:nth-child(1) {
+  left: 8px;
+  animation: loading__item1 0.9s infinite;
+}
+.loading div:nth-child(2) {
+  left: 8px;
+  animation: loading__item2 0.9s infinite;
+}
+.loading div:nth-child(3) {
+  left: 32px;
+  animation: loading__item2 0.9s infinite;
+}
+.loading div:nth-child(4) {
+  left: 56px;
+  animation: loading__item3 0.9s infinite;
+}
+@keyframes loading__item1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+@keyframes loading__item3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes loading__item2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
 **/
+.loading {
+  background-color: white;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: loading-disparition 4.5s forwards;
+          animation: loading-disparition 4.5s forwards;
+}
+
+.loading__bar {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background: linear-gradient(#9356dc, #ff79da);
+  width: 0%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: inherit;
+  -webkit-animation: apparition_bar 2.5s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+          animation: apparition_bar 2.5s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+}
+
+.loading__text {
+  font-family: "Shrikhand";
+  font-size: 37px;
+  -webkit-animation: apparition_text 2s forwards;
+          animation: apparition_text 2s forwards;
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  width: 200px;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@-webkit-keyframes loading-disparition {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes loading-disparition {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes apparition_bar {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes apparition_bar {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes apparition_text {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes apparition_text {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @-webkit-keyframes circle_rotation {
   0% {
     -webkit-transform: rotate(0deg);
@@ -461,6 +633,7 @@ footer {
             transform: rotate(360deg);
   }
 }
+
 @keyframes circle_rotation {
   0% {
     -webkit-transform: rotate(0deg);
@@ -522,12 +695,17 @@ footer {
      object-fit: cover;
 }
 
+@media screen and (min-width: 690px) {
+  .banner img {
+    max-height: 400px;
+  }
+}
+
 .restaurant {
   position: relative;
   top: -30px;
   background-color: #f4f4f4;
   border-radius: 30px 30px 0px 0px;
-  padding: 40px 20px 20px 20px;
 }
 
 .restaurant__name {
@@ -661,9 +839,9 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   background-color: #99e2d0;
-  margin: -16px -120px -16px 16px;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  margin: -15px -100px -15px 10px;
+  -webkit-transition-duration: 800ms;
+          transition-duration: 800ms;
   width: 80px;
 }
 
@@ -674,7 +852,7 @@ footer {
 }
 
 .menu__description__card:hover .checkbox {
-  margin-right: -10px;
+  margin-right: -1px;
 }
 
 .menu__description__card:hover .checkbox__circle {
@@ -684,6 +862,16 @@ footer {
           animation-delay: 200ms;
 }
 
+#menu__choice {
+  visibility: hidden;
+  display: none;
+}
+
+input:checked ~ label .checkbox {
+  margin-right: -1px;
+}
+
+/** ANIMATIONS APPARATITION DES CARD **/
 .appearance1 {
   -webkit-animation: card-appearance 500ms backwards;
           animation: card-appearance 500ms backwards;
@@ -704,16 +892,4 @@ footer {
   -webkit-animation-delay: 1000ms;
           animation-delay: 1000ms;
 }
-
-/**
-
-#checkbox__input {
-  visibility: hidden;
-  display: none;
-}
-
-input:checked ~ label #checkbox__input {
-  animation: check-appearance;
-}
-**/
 /*# sourceMappingURL=style.css.map */
