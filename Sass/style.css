@@ -300,7 +300,6 @@ input::placeholder {
 
 /** remplissage coeur **/
 .btn__like {
-  position: relative;
   font-size: 25px;
   width: 10%;
 }
@@ -330,6 +329,7 @@ input:checked ~ label .heart-empty {
 }
 
 .heart-empty {
+  background: #f4f4f4;
   opacity: 1;
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
@@ -372,6 +372,19 @@ input:checked ~ label .heart-empty {
   -webkit-box-shadow: 7px 6px 9px -1px #6e6e6e;
           box-shadow: 7px 6px 9px -1px #6e6e6e;
   opacity: 0.8;
+}
+
+/** COEUR MENUS **/
+.btn__like--menu {
+  font-size: 25px;
+  width: 10%;
+  position: relative;
+  top: 15px;
+}
+
+.btn__like--menu input {
+  visibility: hidden;
+  display: none;
 }
 
 footer {

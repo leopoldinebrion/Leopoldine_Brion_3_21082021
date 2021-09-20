@@ -15,7 +15,6 @@
 /** remplissage coeur **/
 
 .btn__like {
-  position: relative;
   font-size: 25px;
   width: 10%;
   &__heart {
@@ -43,6 +42,7 @@ input:checked ~ label .heart-empty {
 }
 
 .heart-empty {
+  background: $grey;
   opacity: 1;
   transition-duration: 500ms;
   &:hover {
@@ -74,5 +74,18 @@ input:checked ~ label .heart-empty {
   @include shadow;
   &:hover {
     @include btn-effect;
+  }
+}
+
+/** COEUR MENUS **/
+
+.btn__like--menu {
+  font-size: 25px;
+  width: 10%;
+  position: relative;
+  top: 15px;
+  & input {
+    visibility: hidden;
+    display: none;
   }
 }
