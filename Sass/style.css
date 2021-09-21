@@ -21,6 +21,7 @@ h4 {
 
 p {
   font-weight: lighter;
+  font-size: 0.9em;
   margin: 0;
 }
 
@@ -329,7 +330,6 @@ input:checked ~ label .heart-empty {
 }
 
 .heart-empty {
-  background: #f4f4f4;
   opacity: 1;
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
@@ -351,6 +351,10 @@ input:checked ~ label .heart-empty {
 
 .menu .btn__like__heart {
   background-color: #f4f4f4;
+}
+
+.heart__empty--menu {
+  background: #f4f4f4;
 }
 
 /** Bouton commander **/

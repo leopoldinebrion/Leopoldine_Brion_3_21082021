@@ -42,7 +42,6 @@ input:checked ~ label .heart-empty {
 }
 
 .heart-empty {
-  background: $grey;
   opacity: 1;
   transition-duration: 500ms;
   &:hover {
@@ -58,6 +57,10 @@ input:checked ~ label .heart-empty {
 
 .menu .btn__like__heart {
   background-color: $grey;
+}
+
+.heart__empty--menu {
+  background: $grey;
 }
 
 /** Bouton commander **/
