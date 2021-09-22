@@ -438,71 +438,6 @@ footer {
   margin-bottom: 8px;
 }
 
-/**
-.loading {
-  z-index: 2;
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  animation: loading-disparition 5s forwards;
-  &__container {
-    @include flex(row, center, center);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-  &__item {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: $purple;
-    font-size: 25px;
-    margin-left: 5px;
-  }
-}
-
-.loading__container div:nth-child(1) {
-  left: 8px;
-  animation: loading__item1 0.9s infinite;
-}
-.loading div:nth-child(2) {
-  left: 8px;
-  animation: loading__item2 0.9s infinite;
-}
-.loading div:nth-child(3) {
-  left: 32px;
-  animation: loading__item2 0.9s infinite;
-}
-.loading div:nth-child(4) {
-  left: 56px;
-  animation: loading__item3 0.9s infinite;
-}
-@keyframes loading__item1 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(2);
-  }
-}
-@keyframes loading__item3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes loading__item2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(24px, 0);
-  }
-}
-
-**/
 .loading {
   background-color: white;
   z-index: 1000;
@@ -774,8 +709,18 @@ footer {
 .title h2 {
   font-weight: lighter;
   font-size: 1.1em;
-  border-bottom: 3px solid #99e2d0;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.title h2::after {
+  content: "";
   width: 40px;
+  height: 3px;
+  background-color: #99e2d0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .description {
@@ -877,15 +822,6 @@ footer {
           animation: circle_rotation 700ms;
   -webkit-animation-delay: 200ms;
           animation-delay: 200ms;
-}
-
-#menu__choice {
-  visibility: hidden;
-  display: none;
-}
-
-input:checked ~ label .checkbox {
-  margin-right: -1px;
 }
 
 /** ANIMATIONS APPARATITION DES CARD **/
